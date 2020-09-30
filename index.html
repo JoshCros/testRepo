@@ -5,8 +5,19 @@
 <link rel="stylesheet" href="testRepo.css">
 <body>
 
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="icon-bar">
+  <a class="active" href="#"><i class="fa fa-home"></i></a>
+  <a href="#"><i class="fa fa-search"></i></a>
+  <a href="#"><i class="fa fa-envelope"></i></a>
+  <a href="#"><i class="fa fa-globe"></i></a>
+  <a href="#"><i class="fa fa-trash"></i></a>
+</div>
+
 <h1> Welcome to the website! </h1>
-  
+ 
   <!-- Navigation -->
 <nav class="w3-bar w3-black">
   <a href="#home" class="w3-button w3-bar-item">Home</a>
@@ -15,5 +26,40 @@
   <a href="#contact" class="w3-button w3-bar-item">Contact</a>
 </nav>
 
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="img_la.jpg" style="width:100%">
+  <img class="mySlides" src="img_ny.jpg" style="width:100%">
+  <img class="mySlides" src="img_chicago.jpg" style="width:100%">
+</section>
+  
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <p class="w3-medium">
+    Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+  </p>
+</footer>
+  
 </body>
 </html>
